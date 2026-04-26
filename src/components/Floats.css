@@ -1,0 +1,65 @@
+.whatsapp-float {
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand), var(--brand-mid), var(--accent));
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  z-index: 9998;
+  box-shadow: 0 8px 24px rgba(15, 47, 58, .35);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.whatsapp-float::before {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1px solid rgba(93, 202, 165, .4);
+  animation: pulse 2.5s infinite;
+}
+.whatsapp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 36px rgba(15, 47, 58, .5);
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); opacity: .8; }
+  70%  { transform: scale(1.45); opacity: 0; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+
+.scroll-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9997;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(26, 74, 92, .4);
+}
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+.scroll-top:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
